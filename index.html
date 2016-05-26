@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Simple Calculator 2.0</title>
+		<link a href="css/main.css" rel="stylesheet">
+		<script src="jquery.js" type="text/javascript"></script>
+		<script src="javascript/javascript.js" type="text/javascript"></script>
+		<script src="javascript/jquery_script.js"></script>
+	</head>
+	<body>
+		<div id="topbar">
+			<div id="sections_btn_holder">
+				<button onclick="toggleNavPanel('sections_panel')">Navigator <span id="navarrow">&#9662;</span></button>
+			</div>
+			<div id="sections_panel">
+				<div id="section">
+				</div>
+			</div>
+		</div>
+		<div id="calc-contain">
+			<form name="calculator">
+				<input type="text" name="answer"/>
+
+				<input type="button" value=" 1 " onclick="calculator.answer.value += '1'"/>
+				<input type="button" value=" 2 " onclick="calculator.answer.value += '2'"/>
+				<input type="button" value=" 3 " onclick="calculator.answer.value += '3'"/>
+				<input type="button" value=" + " onclick="calculator.answer.value += '+'"/>
+				<br/>
+
+				<input type="button" value=" 4 " onclick="calculator.answer.value += '4'"/>
+				<input type="button" value=" 5 " onclick="calculator.answer.value += '5'"/>
+				<input type="button" value=" 6 " onclick="calculator.answer.value += '6'"/>
+				<input type="button" value=" - " onclick="calculator.answer.value += '-'"/>
+				<br/>
+
+				<input type="button" value=" 7 " onclick="calculator.answer.value += '7'"/>
+				<input type="button" value=" 8 " onclick="calculator.answer.value += '8'"/>
+				<input type="button" value=" 9 " onclick="calculator.answer.value += '9'"/>
+				<input type="button" value=" x " onclick="calculator.answer.value += '*'"/>
+				<br/>
+
+				<input type="button" value=" c " onclick="calculator.answer.value = ''"/>
+				<input type="button" value=" 0 " onclick="calculator.answer.value += '0'"/>
+				<input type="button" value=" = " onclick="calculator.answer.value = eval(calculator.answer.value)"/>
+				<input type="button" value=" / " onclick="calculator.answer.value += '/'"/>
+				<br/>
+
+			</form>
+		</div>
+		<div id="test">This is a test to change the background color!</div>
+		<button onclick="color('test','green')">Green</button>
+		<button onclick="color('test','blue')">Blue</button>
+		<button onclick="Alert.render('This is a test!')">Custom Alert</button>
+		<div id="dialogoverlay"></div>
+		<div id="dialogbox">
+			<div>
+				<div id="dialogboxhead"></div>
+				<div id="dialogboxbody"></div>
+				<div id="dialogboxfoot"></div>
+			</div>
+		</div>
+		<br/><br/>
+		<div id="dice_game">
+			<div class="dice">
+				<div id="dice1">
+					0
+				</div>
+			</div>
+			<div class="dice">
+				<div id="dice2">
+					0
+				</div>
+			</div>
+			<button onclick="playDiceGame()" class="dice_btn">Roll Me!</button>
+			<br/><br/><br/><br/><br/>
+			<center><h3 id="diceTotal"></h3></center>
+		</div>
+		<br/><br/>
+		<div id="box1" class="myboxes">It Worked!</div>
+		<div id="box2" class="myboxes">It Worked!</div>
+		<div id="box3" class="myboxes">It Worked!</div>
+		<br/>
+		<button id="but1" onclick="document.getElementById('box1').style.display='block'">Pop Out Interface</button>
+		<button id="but2" onclick="document.getElementById('box2').style.display='block'">Pop Out Interface</button>
+		<button id="but3" onclick="document.getElementById('box3').style.display='block'">Pop Out Interface</button>
+		<br/><br/><br/>
+		<div class="class1" onclick="toggleClass(this)"></div>
+		<div class="class1" onclick="toggleClass(this)"></div>
+		<div class="class1" onclick="toggleClass(this)"></div>
+		<div class="class1" onclick="toggleClass(this)"></div>
+		<div id="menu1">
+			<div class="class4" onclick="toggleClass2(this)"></div>
+			<div class="class3" onclick="toggleClass2(this)"></div>
+			<div class="class3" onclick="toggleClass2(this)"></div>
+			<div class="class3" onclick="toggleClass2(this)"></div>
+		</div>
+	<a href="clock.html">clock</a>
+	<a href="html/memoryGame.html">Memory Game</a>
+	<a href="html/image_slider.html">Image Slider</a>
+	<br/><br/><br/><br/><br/><br/>
+	</body>
+</html>

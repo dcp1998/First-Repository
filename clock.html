@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head><title>Clock</title>
+<style>
+.clockStyle {
+	background-color:#000;
+	border:#999 2px inset;
+	padding:6px;
+	color:#0FF;
+	font-family:"Arial Black", Gadget, sans-serif;
+    font-size:16px;
+    font-weight:bold;
+	letter-spacing: 2px;
+	display:inline;
+}
+</style>
+</head>
+<body>
+<h2>Javascript CSS Digital Clock Tutorial</h2>
+<div id="clockDisplay" class="clockStyle"></div>
+<br/><br/><br/>
+<div id="timerDisplay" class="clockStyle"></div>
+<script>
+function renderTime() {
+	var currentTime = new Date();
+	var diem = "AM";
+	var h = currentTime.getHours();
+	var m = currentTime.getMinutes();
+    var s = currentTime.getSeconds();
+	setTimeout('renderTime()',1000);
+	if (h==12){
+		diem="PM";
+	}
+	if (h == 0) {
+		h = 12;
+	}
+	if(h>12){
+		h=h-12;
+		diem="PM";
+	}
+	console.log(h);
+	if (h < 10) {
+		h = "0" + h;
+	}
+	if (m < 10) {
+		m = "0" + m;
+	}
+	if (s < 10) {
+		s = "0" + s;
+	}
+    var myClock = document.getElementById('clockDisplay');
+	myClock.innerHTML = h + ":" + m + ":" + s + " " + diem;
+}
+renderTime();
+
+function timer(){
+	var hour = 10;
+	var min = 7;
+	var sec = 48
+	if (hour < 10){
+		hour = "0" + hour;
+	}
+	if (min < 10){
+		min = "0" + min;
+	}
+	if (sec < 10){
+		sec = "0" + sec;
+	}
+
+	if (sec == 0){
+		min = min - 1;
+		sec = 60;
+	}
+	if (min == 0){
+		hour = hour -1;
+		min = 60;
+	}
+	if (hour == 0){
+		min = 59;
+		sec = 60;
+	}
+
+	var myTimer = document.getElementById("timerDisplay");
+	var i = sec;
+	for (i > 0;i=0;i--){
+		timer();
+	}
+	myTimer.innerHTML = hour + ":" + min + ":" + sec;
+}
+
+</script>
+<a href="index.html">Back to Home!</a>
+</body>
+</html>
